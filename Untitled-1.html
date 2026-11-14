@@ -4,17 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SatuPersen Tracker</title>
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SatuPersen Tracker</title>
     
-    <!-- TAMBAHIN 3 BARIS INI DI SINI -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#10b981">
     <link rel="apple-touch-icon" href="icon-192.png">
     
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -256,7 +250,6 @@
         
         function initUserName() {
             if (!userName) {
-                // Tanya nama pas pertama kali buka
                 let inputName = prompt("Selamat datang di tracker 1%! Siapa nama panggilanmu?");
                 userName = (inputName && inputName.trim() !== "") ? inputName.trim() : "Sobat";
                 localStorage.setItem('satuPersenUserName', userName);
@@ -277,11 +270,10 @@
             document.getElementById('user-greeting').innerHTML = `Halo, ${userName}! 👋 <i class="fas fa-pen" style="font-size: 14px; color: var(--text-secondary); opacity: 0.5;"></i>`;
         }
 
-        // Jalankan inisialisasi nama
         initUserName();
 
         // ==========================================
-        // INISIALISASI DATA KEGIATAN (KOSONG!)
+        // INISIALISASI DATA KEGIATAN
         // ==========================================
         let appConfig = JSON.parse(localStorage.getItem('satuPersenConfig'));
         if (!appConfig) {
@@ -289,7 +281,6 @@
             localStorage.setItem('satuPersenConfig', JSON.stringify(appConfig));
         }
 
-        // Pake key baru (_v5) biar bener-bener kosong buat user baru
         let habits = JSON.parse(localStorage.getItem('satuPersenData_v5')) || [];
         
         function saveData() {
@@ -361,12 +352,10 @@
             if (!name) return alert("Nama kegiatan nggak boleh kosong, Bro!");
 
             if (editingHabitId !== null) {
-                // Edit
                 const index = habits.findIndex(h => h.id === editingHabitId);
                 habits[index].name = name;
                 habits[index].icon = selectedIcon;
             } else {
-                // Tambah Baru
                 const newHabit = {
                     id: Date.now(), 
                     name: name,
@@ -565,10 +554,6 @@
 
         renderHabits();
     </script>
-
-    <!-- ... sisa kode panjang lu di atasnya ... -->
-    
-    <!-- TAMBAHIN KODE SCRIPT INI DI SINI -->
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
