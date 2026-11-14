@@ -1,22 +1,21 @@
 {
-  "name": "DompetKu Tracker",
-  "short_name": "DompetKu",
+  "name": "SatuPersen Tracker",
+  "short_name": "SatuPersen",
+  "description": "Tracker kebiasaan untuk tumbuh 1% setiap hari",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#2563eb",
+  "background_color": "#f0fdf4",
+  "theme_color": "#10b981",
   "icons": [
     {
-      "src": "https://cdn-icons-png.flaticon.com/192/2454/2454269.png",
+      "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/2454/2454269.png",
+      "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     }
   ]
 }
